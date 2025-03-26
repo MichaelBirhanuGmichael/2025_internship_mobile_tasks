@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../screens/add_update_screen.dart';  // Import your screen
 import '../utils/colors.dart';
 
 class CustomFloatingActionButton extends StatelessWidget {
@@ -7,7 +8,13 @@ class CustomFloatingActionButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FloatingActionButton(
-      onPressed: () {},
+      onPressed: () {
+        // Navigate to AddUpdateScreen when clicked
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const AddUpdateProductPage()),
+        );
+      },
       backgroundColor: AppColors.primary,
       child: const Icon(Icons.add, size: 32, color: Colors.white),
     );

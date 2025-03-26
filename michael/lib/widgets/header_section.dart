@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../utils/colors.dart';
+import '../screens/search_page.dart'; // Import the SearchPage class
 
 class HeaderSection extends StatelessWidget {
   const HeaderSection({super.key});
@@ -36,11 +37,21 @@ class HeaderSection extends StatelessWidget {
           children: [
             IconButton(
               icon: const Icon(Icons.notifications_outlined),
-              onPressed: () {},
+              onPressed: () {
+                 Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const SearchPage()),
+              );
+              },
             ),
             IconButton(
               icon: const Icon(Icons.search),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const SearchPage()),
+                );
+              },
             ),
           ],
         ),

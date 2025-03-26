@@ -7,4 +7,6 @@ class AppColors {
   static const textSecondary = Color(0xFF888888);
   static const cardBackground = Colors.white;
   static const ratingStar = Colors.amber;
+  static const chipSelected = Color(0xFF3366FF);
+  static const chipUnselected = Color(0xFFF5F5F5);
 }
