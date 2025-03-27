@@ -16,7 +16,7 @@ class _AddUpdateProductPageState extends State<AddUpdateProductPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey.shade200, // Matches light background in Figma
+      backgroundColor: Colors.grey.shade200, // Background Color
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),

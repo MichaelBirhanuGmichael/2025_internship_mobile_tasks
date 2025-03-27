@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:michael/screens/details_screen.dart';
 import 'package:michael/screens/home_screen.dart';
 
 void main() {

@@ -17,15 +17,16 @@ class AppRoutes {
       case addUpdateProduct:
         return MaterialPageRoute(builder: (_) => const AddUpdateProductPage());
       case productDetails:
+        final args = settings.arguments as Map<String, dynamic>;
         return MaterialPageRoute(
           builder: (_) => DetailsScreen(
-            imageUrl: (settings.arguments as Map<String, dynamic>?)?['imageUrl'],
-            category: (settings.arguments as Map<String, dynamic>?)?['category'],
-            title: (settings.arguments as Map<String, dynamic>?)?['title'],
-            rating: (settings.arguments as Map<String, dynamic>?)?['rating'],
-            price: (settings.arguments as Map<String, dynamic>?)?['price'],
-            description: (settings.arguments as Map<String, dynamic>?)?['description'],
-            sizes: (settings.arguments as Map<String, dynamic>?)?['sizes'],
+            imageUrl: args['imageUrl'],
+            category: args['category'],
+            title: args['title'],
+            rating: args['rating'],
+            price: args['price'],
+            description: args['description'],
+            sizes: args['sizes'],
           ),
         );
       case search:

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../utils/routes.dart';
 
 class SearchPage extends StatefulWidget {
   const SearchPage({super.key});
@@ -23,7 +24,11 @@ class _SearchPageState extends State<SearchPage> {
         ),
         title: const Text(
           "Search Product",
-          style: TextStyle(color: Colors.black, fontSize: 18, fontWeight: FontWeight.bold),
+          style: TextStyle(
+            color: Colors.black,
+            fontSize: 18,
+            fontWeight: FontWeight.bold,
+          ),
         ),
         centerTitle: true,
       ),
@@ -68,24 +73,50 @@ class _SearchPageState extends State<SearchPage> {
               child: ListView.builder(
                 itemCount: 2, // Sample two products
                 itemBuilder: (context, index) {
-                  return _buildProductCard();
+                  return GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(
+                        context,
+                        AppRoutes.productDetails,
+                        arguments: {
+                          'imageUrl': 'assets/images/product_image.png',
+                          'category': "Men’s shoe",
+                          'title': "Derby Leather Shoes",
+                          'rating': 4.0,
+                          'price': 120.0,
+                          'description':
+                              "A derby leather shoe is a classic and versatile footwear...",
+                          'sizes': [40, 41, 42, 43, 44],
+                        },
+                      );
+                    },
+                    child: _buildProductCard(), // Reference the product card widget
+                  );
                 },
               ),
             ),
 
             // Filter Section
-            const Text("Category", style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+            const Text(
+              "Category",
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+            ),
             const SizedBox(height: 5),
             TextField(
               decoration: InputDecoration(
-                border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
                 contentPadding: const EdgeInsets.symmetric(horizontal: 12),
               ),
             ),
             const SizedBox(height: 10),
 
             // Price Slider
-            const Text("Price", style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+            const Text(
+              "Price",
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+            ),
             Slider(
               value: _price,
               min: 0,
@@ -107,10 +138,15 @@ class _SearchPageState extends State<SearchPage> {
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.blue,
                   padding: const EdgeInsets.symmetric(vertical: 14),
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
                 ),
                 onPressed: () {},
-                child: const Text("APPLY", style: TextStyle(fontSize: 16, color: Colors.white)),
+                child: const Text(
+                  "APPLY",
+                  style: TextStyle(fontSize: 16, color: Colors.white),
+                ),
               ),
             ),
             const SizedBox(height: 20),
@@ -130,7 +166,6 @@ class _SearchPageState extends State<SearchPage> {
         color: Colors.grey[200],
       ),
       child: Column(
-        
         children: [
           ClipRRect(
             borderRadius: BorderRadius.circular(10),
@@ -152,8 +187,14 @@ class _SearchPageState extends State<SearchPage> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: const [
-              Text("Men's shoe", style: TextStyle(fontSize: 14, color: Colors.grey)),
-              Text("\$120", style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+              Text(
+                "Men's shoe",
+                style: TextStyle(fontSize: 14, color: Colors.grey),
+              ),
+              Text(
+                "\$120",
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+              ),
             ],
           ),
           Row(
