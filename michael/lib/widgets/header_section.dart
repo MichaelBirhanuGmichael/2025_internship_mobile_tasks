@@ -23,7 +23,10 @@ class HeaderSection extends StatelessWidget {
               children: [
                 Text(
                   "July 14, 2023",
-                  style: TextStyle(fontSize: 12, color: AppColors.textSecondary),
+                  style: TextStyle(
+                    fontSize: 12,
+                    color: AppColors.textSecondary,
+                  ),
                 ),
                 Text(
                   "Hello, Yohannes",
@@ -35,23 +38,21 @@ class HeaderSection extends StatelessWidget {
         ),
         Row(
           children: [
-            IconButton(
-              icon: const Icon(Icons.notifications_outlined),
-              onPressed: () {
-                 Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const SearchPage()),
-              );
-              },
-            ),
-            IconButton(
-              icon: const Icon(Icons.search),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const SearchPage()),
-                );
-              },
+            Container(
+              width: 44,
+              height: 44,
+              margin: const EdgeInsets.only(right: 8), // Space between icons
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(8),
+                border: Border.all(color: Colors.grey.shade300, width: 1.2),
+              ),
+              child: IconButton(
+                icon: const Icon(Icons.notifications_outlined, size: 20),
+                onPressed: () {},
+                padding: EdgeInsets.zero,
+                color: const Color.fromARGB(255, 41, 40, 40),
+              ),
             ),
           ],
         ),

@@ -3,6 +3,7 @@ import '../widgets/header_section.dart';
 import '../widgets/product_card.dart';
 import '../widgets/floating_action_button.dart';
 import '../utils/colors.dart';
+import '../screens/search_page.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -19,12 +20,46 @@ class HomeScreen extends StatelessWidget {
             children: [
               const HeaderSection(),
               const SizedBox(height: 20),
-              const Text(
-                "Available Products",
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text(
+                    "Available Products",
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  ),
+                  // Custom Search Button matching Figma design
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const SearchPage(),
+                        ),
+                      );
+                    },
+                    child: Container(
+                      width: 44, // Match Figma dimensions
+                      height: 44,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(
+                          8,
+                        ), // Adjust corner radius to match Figma
+                        border: Border.all(
+                          color:
+                              Colors.grey.shade300, // Match Figma border color
+                          width: 1.5, // Match Figma border thickness
+                        ),
+                      ),
+                      padding: const EdgeInsets.all(10), // Inner padding
+                      child: Image.asset(
+                        'assets/icons/search.png', // Your custom search icon
+                        fit: BoxFit.contain,
+                        color: Colors.grey.shade300, // Match Figma icon color
+                      ),
+                    ),
+                  ),
+                ],
               ),
               const SizedBox(height: 10),
               Expanded(
