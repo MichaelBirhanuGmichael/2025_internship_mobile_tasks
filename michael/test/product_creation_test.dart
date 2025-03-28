@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:michael/screens/add_update_screen.dart'; // Ensure correct import
+import 'package:michael/features/product/presentation/screens/add_update_screen.dart'; // Ensure correct import
 
 void main() {
   testWidgets('Test adding a new product', (WidgetTester tester) async {

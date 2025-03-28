@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import '../screens/home_screen.dart';
-import '../screens/add_update_screen.dart';
-import '../screens/details_screen.dart';
-import '../screens/search_page.dart';
+import '../../features/product/presentation/screens/home_screen.dart';
+import '../../features/product/presentation/screens/add_update_screen.dart';
+import '../../features/product/presentation/screens/details_screen.dart';
+import '../../features/product/presentation/screens/search_page.dart';
 
 class AppRoutes {
   static const String home = '/';

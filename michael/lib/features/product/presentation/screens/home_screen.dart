@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import '../widgets/header_section.dart';
 import '../widgets/product_card.dart';
 import '../widgets/floating_action_button.dart';
-import '../utils/colors.dart';
-import '../screens/search_page.dart';
+import '../../../../core/utils/colors.dart';
+import 'search_page.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});

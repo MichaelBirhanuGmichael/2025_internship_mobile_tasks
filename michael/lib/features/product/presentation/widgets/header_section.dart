@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import '../utils/colors.dart';
-import '../screens/search_page.dart'; // Import the SearchPage class
-
+import '../../../../core/utils/colors.dart';
 class HeaderSection extends StatelessWidget {
   const HeaderSection({super.key});
 

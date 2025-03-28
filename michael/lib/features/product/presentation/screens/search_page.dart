@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../utils/routes.dart';
+import '../../../../core/utils/routes.dart';
 
 class SearchPage extends StatefulWidget {
   const SearchPage({super.key});

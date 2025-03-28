@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../utils/colors.dart';
+import '../../../../core/utils/colors.dart';
 
 class DetailsScreen extends StatefulWidget {
   final String imageUrl;
