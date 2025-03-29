@@ -1,30 +1,12 @@
-// import 'package:flutter/material.dart';
-// import 'screens/home_screen.dart';
-
-// void main() {
-//   runApp(const MyApp());
-// }
-
-// class MyApp extends StatelessWidget {
-//   const MyApp({super.key});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return MaterialApp(
-//       debugShowCheckedModeBanner: false,
-//       title: 'Flutter Home UI',
-//       theme: ThemeData(
-//         primarySwatch: Colors.blue,
-//         fontFamily: 'Roboto',
-//       ),
-//       home: const HomeScreen(),
-//     );
-//   }
-// }
 import 'package:flutter/material.dart';
+// import 'package:get_it/get_it.dart';
+import 'injection_container.dart' as di;
 import 'core/utils/routes.dart';
 
-void main() {
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await di.init();
   runApp(const MyApp());
 }
 

@@ -1,16 +1,26 @@
-# michael
+# E-Commerce Mobile App
 
-A new Flutter project.
+## Architecture
+The app follows Clean Architecture principles with three main layers:
 
-## Getting Started
+1. **Presentation Layer**: Contains UI components and BLoCs
+2. **Domain Layer**: Contains business logic, entities, and use cases
+3. **Data Layer**: Handles data sources and repositories
 
-This project is a starting point for a Flutter application.
+## Data Flow
+1. UI triggers an event (e.g., loading products)
+2. BLoC processes the event and calls the appropriate use case
+3. Use case coordinates with repository
+4. Repository decides data source (remote or local)
+5. Data returned through the same chain back to UI
 
-A few resources to get you started if this is your first Flutter project:
+## Key Features
+- Product CRUD operations
+- Network-aware data fetching
+- Local caching for offline support
+- Clean separation of concerns
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Testing
+- Unit tests for models, use cases, and repositories
+- Mock implementations for testing
+- Test coverage for all critical paths
