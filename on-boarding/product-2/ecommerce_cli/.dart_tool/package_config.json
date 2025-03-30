@@ -1,0 +1,17 @@
+{
+  "configVersion": 2,
+  "packages": [
+    {
+      "name": "ecommerce_cli",
+      "rootUri": "../",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    }
+  ],
+  "generated": "2025-03-29T19:15:32.791539Z",
+  "generator": "pub",
+  "generatorVersion": "3.7.2",
+  "flutterRoot": "file:///C:/flutter",
+  "flutterVersion": "3.29.2",
+  "pubCache": "file:///C:/Users/User/AppData/Local/Pub/Cache"
+}
