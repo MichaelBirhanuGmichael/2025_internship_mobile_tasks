@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../../core/utils/routes.dart';
+import '../widgets/product_card.dart';
 
 class SearchPage extends StatefulWidget {
   const SearchPage({super.key});
@@ -68,30 +68,12 @@ class _SearchPageState extends State<SearchPage> {
             ),
             const SizedBox(height: 20),
 
-            // Product List
+             // Product List - 
             Expanded(
               child: ListView.builder(
-                itemCount: 2, // Sample two products
+                itemCount: 2, 
                 itemBuilder: (context, index) {
-                  return GestureDetector(
-                    onTap: () {
-                      Navigator.pushNamed(
-                        context,
-                        AppRoutes.productDetails,
-                        arguments: {
-                          'imageUrl': 'assets/images/product_image.png',
-                          'category': "Men’s shoe",
-                          'title': "Derby Leather Shoes",
-                          'rating': 4.0,
-                          'price': 120.0,
-                          'description':
-                              "A derby leather shoe is a classic and versatile footwear...",
-                          'sizes': [40, 41, 42, 43, 44],
-                        },
-                      );
-                    },
-                    child: _buildProductCard(), // Reference the product card widget
-                  );
+                  return const ProductCard(); 
                 },
               ),
             ),
@@ -156,55 +138,4 @@ class _SearchPageState extends State<SearchPage> {
     );
   }
 
-  // Product Card Widget
-  Widget _buildProductCard() {
-    return Container(
-      margin: const EdgeInsets.symmetric(vertical: 8),
-      padding: const EdgeInsets.all(10),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(12),
-        color: Colors.grey[200],
-      ),
-      child: Column(
-        children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(10),
-            child: Container(
-              height: 150, // Set a height for the image container
-              decoration: const BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage('assets/images/product_image.png'),
-                  fit: BoxFit.cover,
-                ),
-              ),
-            ),
-          ),
-          const SizedBox(height: 10),
-          const Text(
-            "Derby Leather Shoes",
-            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: const [
-              Text(
-                "Men's shoe",
-                style: TextStyle(fontSize: 14, color: Colors.grey),
-              ),
-              Text(
-                "\$120",
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-              ),
-            ],
-          ),
-          Row(
-            children: const [
-              Icon(Icons.star, color: Colors.amber, size: 20),
-              Text("(4.0)", style: TextStyle(fontSize: 14)),
-            ],
-          ),
-        ],
-      ),
-    );
-  }
 }
