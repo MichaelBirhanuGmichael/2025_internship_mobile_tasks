@@ -1,19 +1,30 @@
+# eCommerce CLI Application
 
-# eCommerce Application  
+A command-line interface (CLI) version of an eCommerce product management system, built with Dart. This application allows you to manage products with full CRUD (Create, Read, Update, Delete) functionality.
 
-A simple eCommerce application built using Flutter and Dart. This application allows users to manage products, including adding, viewing, editing, and deleting products. The app supports both a Flutter UI and a command-line interface (CLI) for managing products.  
+## Features
 
-## Features  
+- 📦 **Product Management**:
+  - Add new products with name, description, and price
+  - View all available products
+  - Edit existing products
+  - Delete products
+- 💾 **Data Persistence**:
+  - Automatically saves products to `products.json`
+  - Loads existing products on startup
+- 🖥 **User-Friendly Interface**:
+  - Simple menu-driven navigation
+  - Input validation
+  - Confirmation for destructive actions
 
-### Product Management  
-- Add new products with a name, description, and price.  
-- View all products in a list.  
-- View details of a single product.  
-- Edit existing products.  
-- Delete products.  
+## Prerequisites
 
-### Dual Interface  
-- **Flutter UI**: A graphical user interface for managing products.  
-- **CLI**: A command-line interface for managing products from the terminal.  
+- Dart SDK (version 3.0.0 or higher)
+- Basic command-line knowledge
 
-  
+## Installation
+
+1. Clone or download the repository
+2. Navigate to the project directory:
+   ```bash
+   cd ecommerce_cli
