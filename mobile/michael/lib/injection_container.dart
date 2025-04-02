@@ -64,7 +64,7 @@ Future<void> init() async {
   final dio = Dio();
   sl.registerLazySingleton(() => dio);
 
-  sl.registerLazySingleton(() => InternetConnectionChecker());
+  sl.registerLazySingleton(() => InternetConnectionChecker.createInstance());
 
   // Initialize Hive
   final appDocumentDir = await path_provider.getApplicationDocumentsDirectory();
